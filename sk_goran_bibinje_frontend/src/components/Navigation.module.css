@@ -1,0 +1,48 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  z-index: 100000;
+  padding-right: 2rem;
+  padding-top: 2.5rem;
+}
+
+.navStart {
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navEnd {
+  padding-right: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.text {
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.text:hover {
+  color: orange;
+  transition: 0.3s;
+}
+
+.logo {
+  height: 4rem;
+}

@@ -1,0 +1,35 @@
+.layout {
+  color: black;
+  margin-top: 10rem;
+}
+
+h1,
+h2,
+h3 {
+  color: black;
+  margin-bottom: 2rem;
+}
+
+p {
+  color: #3a3939;
+}
+
+.section1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  gap: 10rem;
+  align-items: center;
+}
+
+.text1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.image1 {
+  width: 30rem;
+}

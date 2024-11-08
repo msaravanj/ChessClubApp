@@ -1,0 +1,18 @@
+.link {
+  text-decoration: none;
+}
+
+.layout {
+  justify-items: center;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 40vh;
+}
+
+.fof {
+  margin-bottom: 2rem;
+}
+
+.fof2 {
+  margin-bottom: 1rem;
+}
