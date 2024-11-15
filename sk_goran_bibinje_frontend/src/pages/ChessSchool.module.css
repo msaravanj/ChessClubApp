@@ -3,13 +3,8 @@
   margin-top: 10rem;
 }
 
-.text1 h2 {
-  color: black;
-  margin-bottom: 1.5rem;
-}
-
-p {
-  color: #3a3939;
+.image1 {
+  width: 25rem;
 }
 
 .section1 {
@@ -25,9 +20,9 @@ p {
 .text1 {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.4rem;
 }
 
-.image1 {
-  width: 30rem;
+.text1 h2 {
+  margin-bottom: 2rem;
 }

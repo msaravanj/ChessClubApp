@@ -1,0 +1,20 @@
+.layout {
+  color: black;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  gap: 0.8rem;
+}
+
+h1 {
+  margin-bottom: 4rem;
+}

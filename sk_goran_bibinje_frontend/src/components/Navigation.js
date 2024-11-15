@@ -6,10 +6,10 @@ const Navigation = (props) => {
   return (
     <nav className={classes.navigation} style={props.navStyle}>
       <div className={classes.navStart}>
-        <NavLink to="/">
+        <NavLink to="/home">
           <img src={logo} className={classes.logo}></img>
         </NavLink>
-        <NavLink className={classes.text} to="/">
+        <NavLink className={classes.text} to="/home">
           Šahovski klub Goran Bibinje
         </NavLink>
       </div>
@@ -17,13 +17,13 @@ const Navigation = (props) => {
         <NavLink className={classes.text} to="/about">
           O klubu
         </NavLink>
-        <NavLink className={classes.text} to="/">
+        <NavLink className={classes.text} to="/leagues">
           Lige
         </NavLink>
-        <NavLink className={classes.text} to="/">
+        <NavLink className={classes.text} to="/school">
           Škola šaha
         </NavLink>
-        <NavLink className={classes.text} to="/">
+        <NavLink className={classes.text} to="/contact">
           Kontakt
         </NavLink>
         <NavLink className={classes.text} to="/login">

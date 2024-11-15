@@ -1,0 +1,9 @@
+.leaflet {
+  display: block;
+  height: 30rem;
+  width: 40rem;
+  margin-top: 4rem;
+  border-radius: 0.5rem;
+  border-style: double;
+  border-color: grey;
+}

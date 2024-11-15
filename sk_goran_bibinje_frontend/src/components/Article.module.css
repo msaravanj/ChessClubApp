@@ -1,0 +1,21 @@
+.article {
+  height: 13rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 50rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.articleImg img {
+  height: 13rem;
+}
+
+.text {
+  padding-left: 1.5rem;
+  padding-top: 0.2rem;
+}
+
+.date {
+  font-size: smaller;
+}

@@ -3,31 +3,26 @@
   margin-top: 10rem;
 }
 
-.text1 h2 {
-  color: black;
-  margin-bottom: 1.5rem;
-}
-
-p {
-  color: #3a3939;
-}
-
 .section1 {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   padding-left: 10rem;
   padding-right: 10rem;
   gap: 10rem;
-  align-items: center;
 }
 
 .text1 {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.4rem;
 }
 
-.image1 {
-  width: 30rem;
+.text1 h2 {
+  margin-bottom: 2rem;
+}
+
+.text1 h4 {
+  margin-top: 2rem;
 }
