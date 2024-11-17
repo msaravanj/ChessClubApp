@@ -7,8 +7,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name = "USERS")
-public class User {
+@Table(name = "LEAGUE")
+public class League {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,13 +16,13 @@ public class User {
 
     private String name;
 
-    private String lastName;
+    @Column(columnDefinition = "TEXT")
+    private String leagueText;
 
-    @Column(unique = true)
-    private String email;
+    private String resultsUrl;
 
-    private String password;
+    private String gamesUrl;
 
-    private Integer role;
+    private String leagueImage;
 
 }
