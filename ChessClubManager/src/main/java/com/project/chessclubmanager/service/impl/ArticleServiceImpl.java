@@ -4,11 +4,15 @@ import com.project.chessclubmanager.domain.Article;
 import com.project.chessclubmanager.dto.ArticleDto;
 import com.project.chessclubmanager.repository.ArticleRepository;
 import com.project.chessclubmanager.service.ArticleService;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
+@AllArgsConstructor
 public class ArticleServiceImpl implements ArticleService {
 
     ArticleRepository articleRepository;

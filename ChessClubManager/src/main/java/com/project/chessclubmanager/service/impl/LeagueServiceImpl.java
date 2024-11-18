@@ -7,11 +7,15 @@ import com.project.chessclubmanager.dto.LeagueDto;
 import com.project.chessclubmanager.dto.UserDto;
 import com.project.chessclubmanager.repository.LeagueRepository;
 import com.project.chessclubmanager.service.LeagueService;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
+@AllArgsConstructor
 public class LeagueServiceImpl implements LeagueService{
 
     LeagueRepository leagueRepository;

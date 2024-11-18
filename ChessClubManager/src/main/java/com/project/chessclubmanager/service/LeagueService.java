@@ -1,9 +1,12 @@
 package com.project.chessclubmanager.service;
 
 import com.project.chessclubmanager.dto.LeagueDto;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public interface LeagueService {
 
     List<LeagueDto> findAllLeagues();

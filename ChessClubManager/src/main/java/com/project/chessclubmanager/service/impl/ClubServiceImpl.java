@@ -4,9 +4,13 @@ import com.project.chessclubmanager.domain.Club;
 import com.project.chessclubmanager.dto.ClubDto;
 import com.project.chessclubmanager.repository.ClubRepository;
 import com.project.chessclubmanager.service.ClubService;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
+@AllArgsConstructor
 public class ClubServiceImpl implements ClubService {
 
     ClubRepository clubRepository;

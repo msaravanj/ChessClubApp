@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("article")
 @CrossOrigin(origins = "http://localhost:3000")
 @AllArgsConstructor
 public class ArticleController {

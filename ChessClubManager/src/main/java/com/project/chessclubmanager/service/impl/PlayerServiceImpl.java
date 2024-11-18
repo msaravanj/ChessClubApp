@@ -4,11 +4,16 @@ import com.project.chessclubmanager.domain.Player;
 import com.project.chessclubmanager.dto.PlayerDto;
 import com.project.chessclubmanager.repository.PlayerRepository;
 import com.project.chessclubmanager.service.PlayerService;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+
+@Service
+@AllArgsConstructor
 public class PlayerServiceImpl implements PlayerService {
 
     PlayerRepository playerRepository;
