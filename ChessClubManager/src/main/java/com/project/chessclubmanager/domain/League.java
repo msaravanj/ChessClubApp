@@ -16,7 +16,7 @@ public class League {
 
     private String name;
 
-    @Column(columnDefinition = "TEXT")
+    @Lob
     private String leagueText;
 
     private String resultsUrl;

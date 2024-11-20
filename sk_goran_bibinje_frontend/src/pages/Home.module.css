@@ -12,7 +12,8 @@
   flex-direction: column;
   margin-left: 10rem;
   margin-right: 10rem;
-  gap: 0.8rem;
+  gap: 1.2rem;
+  margin-bottom: 7rem;
 }
 
 h1 {

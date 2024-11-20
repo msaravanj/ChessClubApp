@@ -20,7 +20,7 @@ public class Article {
 
     private String title;
 
-    @Column(columnDefinition = "TEXT")
+    @Lob
     private String content;
 
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")

@@ -1,0 +1,15 @@
+.inactive-link {
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.inactive-link:hover {
+  color: #ffa500;
+  transition: 0.3s;
+}
+
+.active-link {
+  color: #ffa500;
+}

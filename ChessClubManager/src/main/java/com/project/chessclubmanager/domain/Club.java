@@ -27,12 +27,12 @@ public class Club {
     @Column(unique = true)
     private String email;
 
-    @Column(columnDefinition = "TEXT")
+    @Lob
     private String ChessSchoolText;
 
     private String ChessSchoolImage;
 
-    @Column(columnDefinition = "TEXT")
+    @Lob
     private String aboutUsText;
 
     private String aboutUsImage;

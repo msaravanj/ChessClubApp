@@ -31,3 +31,11 @@ p {
 .image1 {
   width: 30rem;
 }
+
+.p1 {
+  line-height: 1.5;
+  font-size: 1.05rem;
+  word-wrap: break-word;
+  text-align: justify;
+  padding-right: 5rem;
+}

@@ -31,18 +31,20 @@
   gap: 2rem;
 }
 
+.logo {
+  height: 4rem;
+}
+
+.form button {
+  background-color: #28282b;
+  border-style: none;
+}
+
 .text {
-  text-decoration: none;
   color: white;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
 }
 
 .text:hover {
-  color: orange;
-  transition: 0.3s;
-}
-
-.logo {
-  height: 4rem;
+  color: red;
+  transition: 0.2s;
 }

@@ -6,7 +6,7 @@ const PageNotFound = () => {
     <div className={classes.layout}>
       <h1 className={classes.fof}>404</h1>
       <h2 className={classes.fof2}>Ups! Izgleda da stranica ne postoji...</h2>
-      <Link className={classes.link} to="/">
+      <Link className={classes.link} to="/home">
         Idi na početnu stranicu
       </Link>
     </div>

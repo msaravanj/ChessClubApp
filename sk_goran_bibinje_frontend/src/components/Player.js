@@ -1,15 +1,28 @@
 import classes from "./Player.module.css";
-import sasa from "../assets/rezan_sasa.jpg";
 
-const Player = () => {
+const Player = (props) => {
+  let imgPath = props.data.photo;
+  let pathNew = null;
+  if (imgPath !== null) {
+    let path = imgPath.replace(/\\/g, "/");
+    pathNew = path.replace("public/", "");
+  }
+
   return (
     <div className={classes.card}>
-      <img src={sasa} alt="Saša Režan"></img>
-      <h4>Saša Režan</h4>
-      <p>IM</p>
-      <p>Rejting: 2400</p>
-      <p>Liga: 4.5/8</p>
-      <a href="https://ratings.fide.com/profile/14504804" target="_blank">
+      {imgPath === null ? (
+        <img src="blank_profile.jpg" alt="Player's photo"></img>
+      ) : (
+        <img src={pathNew} alt="Player's photo"></img>
+      )}
+
+      <h4>{props.data.name}</h4>
+      <p>{props.data.title}</p>
+      <p>Rejting: {props.data.rating}</p>
+      <p>
+        Liga: {props.data.pointsScored}/{props.data.gamesPlayed}
+      </p>
+      <a href={props.data.fideUrl} target="_blank">
         FIDE PROFIL
       </a>
     </div>

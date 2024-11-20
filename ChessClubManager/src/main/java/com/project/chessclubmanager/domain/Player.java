@@ -32,8 +32,7 @@ public class Player {
     @Column(unique = true)
     private String fideUrl;
 
-    @ElementCollection
-    private List<Integer> teams;
+    private Integer team;
 
 
 }

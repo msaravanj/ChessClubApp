@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import classes from "./App.module.css";
-import { Routes, Route } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import WelcomePage from "./pages/WelcomePage";
 import PageNotFound from "./pages/PageNotFound";
 import AboutUs from "./pages/AboutUs";
@@ -9,24 +8,61 @@ import ChessSchool from "./pages/ChessSchool";
 import ContactPage from "./pages/ContactPage";
 import Leagues from "./pages/Leagues";
 import Home from "./pages/Home";
+import AppLayout from "./pages/AppLayout";
+import ArticlePage from "./pages/ArticlePage";
+import { logoutAction } from "./pages/Logout";
+import { tokenLoader } from "./util/Auth";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <PageNotFound />,
+    id: "root",
+    loader: tokenLoader,
+    children: [
+      {
+        index: true,
+        element: <WelcomePage />,
+      },
+      {
+        path: "home",
+        element: <Home />,
+      },
+      {
+        path: "about",
+        element: <AboutUs />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "school",
+        element: <ChessSchool />,
+      },
+      {
+        path: "leagues",
+        element: <Leagues />,
+      },
+      {
+        path: "contact",
+        element: <ContactPage />,
+      },
+      {
+        path: "logout",
+        action: logoutAction,
+      },
+      {
+        path: "articles/:articleId",
+        element: <ArticlePage />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div className={classes.app}>
-      <main>
-        <Routes>
-          <Route path="/" exact element={<WelcomePage />}></Route>
-          <Route path="/home" exact element={<Home />}></Route>
-          <Route path="/about" exact element={<AboutUs />}></Route>
-          <Route path="/login" exact element={<LoginPage />}></Route>
-          <Route path="/school" exact element={<ChessSchool />}></Route>
-          <Route path="/leagues" exact element={<Leagues />}></Route>
-          <Route path="/contact" exact element={<ContactPage />}></Route>
-          <Route path="*" element={<PageNotFound />}></Route>
-        </Routes>
-      </main>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

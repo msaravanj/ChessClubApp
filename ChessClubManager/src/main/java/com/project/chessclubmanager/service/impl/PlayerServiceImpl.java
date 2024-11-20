@@ -39,7 +39,7 @@ public class PlayerServiceImpl implements PlayerService {
         player.setPhoto(playerDto.getPhoto());
         player.setGamesPlayed(playerDto.getGamesPlayed());
         player.setPointsScored(playerDto.getPointsScored());
-        player.setTeams(playerDto.getTeams());
+        player.setTeam(playerDto.getTeam());
         player.setFideUrl(playerDto.getFideUrl());
 
         Player updatedPlayer = playerRepository.save(player);
@@ -51,14 +51,14 @@ public class PlayerServiceImpl implements PlayerService {
 
         PlayerDto playerDto = new PlayerDto();
         playerDto.setId(player.getId());
-        playerDto.setName(player.getTitle());
+        playerDto.setName(player.getName());
         playerDto.setTitle(player.getTitle());
         playerDto.setRating(player.getRating());
         playerDto.setPhoto(player.getPhoto());
         playerDto.setGamesPlayed(player.getGamesPlayed());
         playerDto.setFideUrl(player.getFideUrl());
         playerDto.setPointsScored(player.getPointsScored());
-        playerDto.setTeams(player.getTeams());
+        playerDto.setTeam(player.getTeam());
 
         return playerDto;
     }
@@ -72,7 +72,7 @@ public class PlayerServiceImpl implements PlayerService {
         player.setRating(playerDto.getRating());
         player.setPhoto(playerDto.getPhoto());
         player.setFideUrl(playerDto.getFideUrl());
-        player.setTeams(playerDto.getTeams());
+        player.setTeam(playerDto.getTeam());
         player.setPointsScored(playerDto.getPointsScored());
         player.setGamesPlayed(playerDto.getGamesPlayed());
 

@@ -24,8 +24,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public Optional<ArticleDto> findByTitle(String title) {
-        return Optional.of(mapToDto(articleRepository.findByTitle(title).get()));
+    public Optional<ArticleDto> findById(Integer id) {
+        return Optional.of(mapToDto(articleRepository.findById(id).get()));
     }
 
     @Override

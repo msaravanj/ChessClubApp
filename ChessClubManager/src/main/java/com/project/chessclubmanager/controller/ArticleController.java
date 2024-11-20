@@ -23,8 +23,8 @@ public class ArticleController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<ArticleDto> getArticleByTitle(@RequestParam String title) {
-        return articleService.findByTitle(title)
+    public ResponseEntity<ArticleDto> getArticleById(@RequestParam Integer id) {
+        return articleService.findById(id)
                 .map(
                         article -> ResponseEntity.status(HttpStatus.OK).body(article)
                 ).orElseGet(

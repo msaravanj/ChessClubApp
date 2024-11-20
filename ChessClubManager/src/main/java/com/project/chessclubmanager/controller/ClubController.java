@@ -1,7 +1,6 @@
 package com.project.chessclubmanager.controller;
 
 import com.project.chessclubmanager.dto.ClubDto;
-import com.project.chessclubmanager.dto.UserDto;
 import com.project.chessclubmanager.service.ClubService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

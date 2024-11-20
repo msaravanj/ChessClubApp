@@ -30,5 +30,5 @@ public class PlayerDto {
 
     private String fideUrl;
 
-    private List<Integer> teams;
+    private Integer team;
 }

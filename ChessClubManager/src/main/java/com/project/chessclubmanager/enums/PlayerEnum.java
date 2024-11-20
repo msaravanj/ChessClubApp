@@ -2,10 +2,11 @@ package com.project.chessclubmanager.enums;
 
 public enum PlayerEnum {
 
-    FIRSTTEAM(0),
-    SECONDTEAM(1),
-    CADET(2),
-    JUNIOR(3);
+    FIRSTSECOND(0),
+    FIRSTTEAM(1),
+    SECONDTEAM(2),
+    CADET(3),
+    JUNIOR(4);
 
     PlayerEnum(Integer role) {
     }

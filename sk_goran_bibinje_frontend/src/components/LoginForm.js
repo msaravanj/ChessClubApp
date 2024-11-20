@@ -1,5 +1,6 @@
 import { useState } from "react";
 import classes from "./LoginForm.module.css";
+import { Form } from "react-router-dom";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -9,18 +10,24 @@ const LoginForm = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/auth/login", {
+      const response = await fetch("http://localhost:8080/auth/login", {
         method: "POST",
+        mode: "cors",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email: email, password: password }),
       });
 
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem("token", data.token); // Spremi JWT token
-        // Preusmjeri korisnika nakon prijave
+        localStorage.setItem("token", data.token);
+        const expiration = new Date();
+        expiration.setHours(expiration.getHours() + 1);
+        localStorage.setItem("expiration", expiration.toISOString());
+        alert("Uspješna prijava");
+        window.location.href = "/home";
       } else {
         setIsLoginFailed(true);
       }
@@ -31,13 +38,14 @@ const LoginForm = () => {
   };
 
   return (
-    <form className={classes.form} onSubmit={handleLogin}>
+    <Form method="post" className={classes.form} onSubmit={handleLogin}>
       <h2>Admin prijava</h2>
       <input
         className={classes.input}
-        type="text"
+        type="email"
         placeholder="E-mail"
         value={email}
+        required
         onChange={(e) => {
           setEmail(e.target.value);
           setIsLoginFailed(false);
@@ -48,6 +56,7 @@ const LoginForm = () => {
         type="password"
         placeholder="Lozinka"
         value={password}
+        required
         onChange={(e) => {
           setPassword(e.target.value);
           setIsLoginFailed(false);
@@ -59,7 +68,7 @@ const LoginForm = () => {
       <button className={classes.btn} type="submit">
         Prijava
       </button>
-    </form>
+    </Form>
   );
 };
 

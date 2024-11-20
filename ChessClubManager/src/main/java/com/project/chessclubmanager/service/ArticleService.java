@@ -11,7 +11,7 @@ public interface ArticleService {
 
     List<ArticleDto> findAllArticles();
 
-    Optional<ArticleDto> findByTitle(String title);
+    Optional<ArticleDto> findById(Integer id);
 
     Optional<ArticleDto> save(ArticleDto articleDto);
 
