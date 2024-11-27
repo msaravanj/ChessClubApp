@@ -2,12 +2,16 @@ import classes from "./ArticleForm.module.css";
 import { useState, useRef } from "react";
 import { Form } from "react-router-dom";
 import { getAuthToken } from "../util/Auth";
+import { Alert } from "react-bootstrap";
 
 const ArticleForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [date, setDate] = useState(null);
   const [image, setImage] = useState(null);
+
+  const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   const formRef = useRef(null);
 
@@ -37,11 +41,11 @@ const ArticleForm = () => {
 
         return result.data.url;
       } else {
-        alert("Neuspješan upload!");
+        //  alert("Neuspješan upload!");
         return null;
       }
     } catch (error) {
-      alert("Pogreška prilikom upload-a!");
+      //  alert("Pogreška prilikom upload-a!");
       console.error(error);
       return null;
     }
@@ -78,13 +82,22 @@ const ArticleForm = () => {
       if (response.ok) {
         console.log(response.text());
         handleReset();
-        alert("Uspješno kreirano!");
+        setSuccess(true);
+        setTimeout(() => {
+          setSuccess(false);
+        }, 2000);
       } else {
-        alert("Pogreška prilikom kreiranja.");
+        setFailed(true);
+        setTimeout(() => {
+          setFailed(false);
+        }, 2000);
       }
     } catch (error) {
       console.error("Error: ", error);
-      alert("Pogreška prilikom kreiranja.");
+      setFailed(true);
+      setTimeout(() => {
+        setFailed(false);
+      }, 2000);
     }
   };
 
@@ -147,6 +160,16 @@ const ArticleForm = () => {
       <button className={classes.btn} type="submit">
         Spremi
       </button>
+      {success && (
+        <Alert className={classes.alert} key="success" variant="success">
+          Kreiranje uspješno!
+        </Alert>
+      )}
+      {failed && (
+        <Alert className={classes.alert} key="danger" variant="danger">
+          Pogreška prilikom kreiranja!
+        </Alert>
+      )}
     </Form>
   );
 };

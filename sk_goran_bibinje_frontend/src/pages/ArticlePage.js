@@ -53,11 +53,6 @@ const ArticlePage = () => {
     <div className={classes.layout}>
       <Navigation navStyle={navStyle} />
       <div className={classes.article}>
-        <div className={classes.links}>
-          <NavLink to="/home" className={classes.link}>
-            Povratak
-          </NavLink>
-        </div>
         <h2>{title}</h2>
         <p className={classes.date}>{time}</p>
         <p className={classes.text}>{content}</p>
