@@ -9,13 +9,13 @@ const ContactPage = () => {
     paddingBottom: "2.5rem",
   };
 
-  const email = "s.k.goran.bibinje@gmail.com";
+  const [email, setEmail] = useState("");
   const [clubName, setClubName] = useState("");
   const [address, setAddress] = useState("");
   const [lat, setLat] = useState(null);
   const [long, setLong] = useState(null);
 
-  const urlGetClub = "http://localhost:8080/club/?email=" + email;
+  const urlGetClub = "http://localhost:8080/club/?id=1";
   const optionsGetClub = {
     method: "GET",
     headers: {
@@ -30,6 +30,7 @@ const ContactPage = () => {
       setAddress("");
       setLat(null);
       setLong(null);
+      setEmail("");
     } else {
       const data = await response.json();
 
@@ -37,6 +38,7 @@ const ContactPage = () => {
       setAddress(data.address);
       setLat(data.latitude);
       setLong(data.longitude);
+      setEmail(data.email);
     }
   };
 

@@ -1,6 +1,7 @@
 package com.project.chessclubmanager.service.impl;
 
 import com.project.chessclubmanager.domain.Player;
+import com.project.chessclubmanager.dto.ArticleDto;
 import com.project.chessclubmanager.dto.PlayerDto;
 import com.project.chessclubmanager.repository.PlayerRepository;
 import com.project.chessclubmanager.service.PlayerService;
@@ -25,6 +26,11 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
+    public Optional<PlayerDto> findById(Long id) {
+        return Optional.of(mapToDto(playerRepository.findById(id).get()));
+    }
+
+    @Override
     public Optional<PlayerDto> save(PlayerDto playerDto) {
         return Optional.of(mapToDto(playerRepository.save(mapToPlayer(playerDto))));
     }
@@ -45,6 +51,15 @@ public class PlayerServiceImpl implements PlayerService {
         Player updatedPlayer = playerRepository.save(player);
 
         return mapToDto(updatedPlayer);
+    }
+
+    @Override
+    public boolean deleteById(Long id) {
+        if (playerRepository.existsById(id)) {
+            playerRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
     private PlayerDto mapToDto(Player player) {

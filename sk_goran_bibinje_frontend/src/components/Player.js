@@ -2,18 +2,13 @@ import classes from "./Player.module.css";
 
 const Player = (props) => {
   let imgPath = props.data.photo;
-  let pathNew = null;
-  if (imgPath !== null) {
-    let path = imgPath.replace(/\\/g, "/");
-    pathNew = path.replace("public/", "");
-  }
 
   return (
     <div className={classes.card}>
       {imgPath === null ? (
         <img src="blank_profile.jpg" alt="Player's photo"></img>
       ) : (
-        <img src={pathNew} alt="Player's photo"></img>
+        <img src={imgPath} alt="Player's photo"></img>
       )}
 
       <h4>{props.data.name}</h4>

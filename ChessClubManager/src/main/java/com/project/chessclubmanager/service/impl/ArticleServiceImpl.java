@@ -24,7 +24,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public Optional<ArticleDto> findById(Integer id) {
+    public Optional<ArticleDto> findById(Long id) {
         return Optional.of(mapToDto(articleRepository.findById(id).get()));
     }
 
@@ -45,6 +45,15 @@ public class ArticleServiceImpl implements ArticleService {
         Article updatedArticle = articleRepository.save(article);
 
         return mapToDto(updatedArticle);
+    }
+
+    @Override
+    public boolean deleteById(Long id) {
+        if (articleRepository.existsById(id)) {
+            articleRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
 
 

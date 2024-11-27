@@ -23,6 +23,16 @@ const Navigation = (props) => {
         </NavLink>
       </div>
       <div className={classes.navEnd}>
+        {token && (
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "active-link" : "inactive-link"
+            }
+            to="/admin"
+          >
+            Admin sučelje
+          </NavLink>
+        )}
         <NavLink
           className={({ isActive }) =>
             isActive ? "active-link" : "inactive-link"
@@ -55,6 +65,7 @@ const Navigation = (props) => {
         >
           Kontakt
         </NavLink>
+
         {!token && (
           <NavLink
             className={({ isActive }) =>

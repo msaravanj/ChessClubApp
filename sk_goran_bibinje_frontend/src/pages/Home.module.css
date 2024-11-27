@@ -19,3 +19,21 @@
 h1 {
   margin-bottom: 4rem;
 }
+
+.btnNew {
+  background-color: orange;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  margin-bottom: 2rem;
+}
+
+.btnNew:hover {
+  background-color: rgb(157, 104, 6);
+  color: rgb(132, 133, 135);
+  transition: 0.3s;
+}

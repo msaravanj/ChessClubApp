@@ -8,11 +8,10 @@ const AboutUs = () => {
     paddingBottom: "2.5rem",
   };
 
-  const email = "s.k.goran.bibinje@gmail.com";
   const [aboutUsText, setAboutUsText] = useState(null);
   const [aboutUsImg, setAboutUsImg] = useState(null);
 
-  const urlGetClub = "http://localhost:8080/club/?email=" + email;
+  const urlGetClub = "http://localhost:8080/club/?id=1";
   const optionsGetClub = {
     method: "GET",
     headers: {
@@ -30,8 +29,7 @@ const AboutUs = () => {
 
       setAboutUsText(data.aboutUsText);
 
-      let path = data.aboutUsImage.replace(/\\/g, "/");
-      setAboutUsImg(path.replace("public/", ""));
+      setAboutUsImg(data.aboutUsImage);
     }
   };
 

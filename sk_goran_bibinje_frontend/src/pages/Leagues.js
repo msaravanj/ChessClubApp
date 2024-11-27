@@ -12,12 +12,6 @@ const Leagues = () => {
   const [leagues, setLeagues] = useState([]);
   const [players, setPlayers] = useState([]);
 
-  const getImgPath = (imgUrl) => {
-    let path = imgUrl.replace(/\\/g, "/");
-    let pathNew = path.replace("public/", "");
-    return pathNew;
-  };
-
   const urlGetLeagues = "http://localhost:8080/league/all";
   const optionsGetLeagues = {
     method: "GET",
@@ -81,8 +75,8 @@ const Leagues = () => {
               </div>
               <div className={classes.image1}>
                 <img
-                  src={getImgPath(league.leagueImage)}
-                  alt="First team"
+                  src={league.leagueImage}
+                  alt="Team"
                   className={classes.image1}
                 ></img>
               </div>

@@ -1,0 +1,41 @@
+.layout {
+  color: black;
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  margin-bottom: 3rem;
+}
+
+.players {
+  margin-bottom: 10rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.btnNew {
+  background-color: orange;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.5rem;
+  border-style: none;
+  margin-bottom: 2rem;
+}
+
+.btnNew:hover {
+  background-color: rgb(157, 104, 6);
+  color: rgb(132, 133, 135);
+  transition: 0.3s;
+}

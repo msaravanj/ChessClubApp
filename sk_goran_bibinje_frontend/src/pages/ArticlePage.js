@@ -45,12 +45,6 @@ const ArticlePage = () => {
     }
   };
 
-  const getImgPath = (imgUrl) => {
-    let path = imgUrl.replace(/\\/g, "/");
-    let pathNew = path.replace("public/", "");
-    return "/" + pathNew;
-  };
-
   useEffect(() => {
     getArticle();
   }, []);
@@ -67,11 +61,7 @@ const ArticlePage = () => {
         <h2>{title}</h2>
         <p className={classes.date}>{time}</p>
         <p className={classes.text}>{content}</p>
-        <img
-          src={getImgPath(img)}
-          alt="Article photo"
-          className={classes.image}
-        ></img>
+        <img src={img} alt="Article photo" className={classes.image}></img>
       </div>
     </div>
   );

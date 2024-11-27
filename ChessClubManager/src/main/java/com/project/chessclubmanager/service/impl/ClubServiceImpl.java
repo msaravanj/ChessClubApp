@@ -7,7 +7,9 @@ import com.project.chessclubmanager.service.ClubService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -16,8 +18,14 @@ public class ClubServiceImpl implements ClubService {
     ClubRepository clubRepository;
 
     @Override
-    public Optional<ClubDto> findByEmail(String email) {
-        return Optional.of(mapToDto(clubRepository.findByEmail(email).get()));
+    public List<ClubDto> findAllClubs() {
+        return clubRepository.findAll()
+                .stream().map(this::mapToDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public Optional<ClubDto> findById(Long id) {
+        return Optional.of(mapToDto(clubRepository.findById(id).get()));
     }
 
     @Override

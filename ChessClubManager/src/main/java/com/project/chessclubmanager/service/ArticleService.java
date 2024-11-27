@@ -11,11 +11,13 @@ public interface ArticleService {
 
     List<ArticleDto> findAllArticles();
 
-    Optional<ArticleDto> findById(Integer id);
+    Optional<ArticleDto> findById(Long id);
 
     Optional<ArticleDto> save(ArticleDto articleDto);
 
     ArticleDto updateArticle(Long articleId, ArticleDto articleDto);
+
+    boolean deleteById(Long id);
 
 
 }

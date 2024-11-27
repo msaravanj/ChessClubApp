@@ -4,6 +4,7 @@ import com.project.chessclubmanager.domain.League;
 import com.project.chessclubmanager.domain.Player;
 import com.project.chessclubmanager.domain.User;
 import com.project.chessclubmanager.dto.LeagueDto;
+import com.project.chessclubmanager.dto.PlayerDto;
 import com.project.chessclubmanager.dto.UserDto;
 import com.project.chessclubmanager.repository.LeagueRepository;
 import com.project.chessclubmanager.service.LeagueService;
@@ -45,6 +46,21 @@ public class LeagueServiceImpl implements LeagueService{
 
         return mapToDto(updatedLeague);
     }
+
+    @Override
+    public boolean deleteById(Long id) {
+        if (leagueRepository.existsById(id)) {
+            leagueRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Optional<LeagueDto> findById(Long id) {
+        return Optional.of(mapToDto(leagueRepository.findById(id).get()));
+    }
+
 
     private LeagueDto mapToDto(League league) {
         LeagueDto leagueDto = new LeagueDto();

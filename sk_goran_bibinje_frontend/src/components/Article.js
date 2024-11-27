@@ -6,19 +6,13 @@ const Article = (props) => {
   const month = date.getMonth() + 1;
   const time = date.getDate() + "." + month + "." + date.getFullYear() + ".";
 
-  const getImgPath = (imgUrl) => {
-    let path = imgUrl.replace(/\\/g, "/");
-    let pathNew = path.replace("public/", "");
-    return pathNew;
-  };
-
   const link = `/articles/${props.data.id}`;
   const content = props.data.content.slice(0, 151) + "...";
 
   return (
     <div className={classes.article}>
       <div className={classes.articleImg}>
-        <img src={getImgPath(props.data.photo)} alt="Chess pieces"></img>
+        <img src={props.data.photo} alt="Chess pieces"></img>
       </div>
       <div className={classes.text}>
         <h3>{props.data.title}</h3>

@@ -8,11 +8,10 @@ const ChessSchool = () => {
     paddingBottom: "2.5rem",
   };
 
-  const email = "s.k.goran.bibinje@gmail.com";
   const [schoolText, setSchoolText] = useState("");
   const [schoolImg, setSchoolImg] = useState("");
 
-  const urlGetClub = "http://localhost:8080/club/?email=" + email;
+  const urlGetClub = "http://localhost:8080/club/?id=1";
   const optionsGetClub = {
     method: "GET",
     headers: {
@@ -29,9 +28,7 @@ const ChessSchool = () => {
       const data = await response.json();
 
       setSchoolText(data.chessSchoolText);
-
-      let path = data.chessSchoolImage.replace(/\\/g, "/");
-      setSchoolImg(path.replace("public/", ""));
+      setSchoolImg(data.chessSchoolImage);
     }
   };
 
